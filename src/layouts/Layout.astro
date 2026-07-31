@@ -63,9 +63,13 @@ const canonicalUrl = `${siteUrl}${path}`;
   </head>
   <body class="bg-background text-foreground relative min-h-screen font-sans antialiased">
     <a href="#main-content" class="skip-to-content">Skip to content</a>
-    <Header client:load />
-    <slot />
-    <Footer client:load />
+    <div id="lenis-wrapper" class="h-screen overflow-y-auto overflow-x-hidden">
+      <div id="lenis-content">
+        <Header client:load />
+        <slot />
+        <Footer client:load />
+      </div>
+    </div>
     <script>
       import Lenis from "lenis";
 
@@ -74,9 +78,18 @@ const canonicalUrl = `${siteUrl}${path}`;
       ).matches;
 
       if (!prefersReducedMotion) {
+        const wrapper = document.getElementById("lenis-wrapper") as HTMLElement;
+        const content = document.getElementById("lenis-content") as HTMLElement;
+
+        // Using an explicit wrapper/content pair (native scrollTop-driven,
+        // not a CSS transform) keeps position:sticky / position:fixed intact.
         const lenis = new Lenis({
+          wrapper,
+          content,
           duration: 1.6,
           easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          orientation: "vertical",
+          gestureOrientation: "vertical",
           smoothWheel: true,
           wheelMultiplier: 1,
           touchMultiplier: 2,

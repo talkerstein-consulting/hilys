@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PackageListing from "../../components/PackageListing";
+import { birthdayPackages } from "../../data/packages-data";
+
+const title = "Birthday Packages";
+const description =
+  "Discover Vaughan birthday party spa packages at Hily's Sparkly Spa — princess themes, tie-dye shirts & slime labs.";
+---
+
+<Layout title={title} description={description} path="/birthday-packages">
+  <PackageListing
+    client:load
+    title={title}
+    description={description}
+    basePath="/birthday-packages"
+    packages={birthdayPackages}
+  />
+</Layout>

@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PackageHero from "../../components/PackageHero";
+import { daySpaPackages } from "../../data/packages-data";
+
+export function getStaticPaths() {
+  return daySpaPackages.map((pkg) => ({
+    params: { slug: pkg.slug },
+    props: { pkg },
+  }));
+}
+
+const { pkg } = Astro.props;
+---
+
+<Layout
+  title={pkg.title}
+  description={pkg.tagline}
+  path={`/day-spa-packages/${pkg.slug}`}
+>
+  <main class="flex-1">
+    <PackageHero client:load pkg={pkg} categoryLabel="Day Spa Packages" />
+  </main>
+</Layout>

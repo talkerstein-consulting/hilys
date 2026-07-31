@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PackageListing from "../../components/PackageListing";
+import { daySpaPackages } from "../../data/packages-data";
+
+const title = "Day Spa Packages";
+const description =
+  "Explore Vaughan day spa for kids at Hily's Sparkly Spa: mani-pedis, face masks, glitter tattoos & DIY workshops.";
+---
+
+<Layout title={title} description={description} path="/day-spa-packages">
+  <PackageListing
+    client:load
+    title={title}
+    description={description}
+    basePath="/day-spa-packages"
+    packages={daySpaPackages}
+  />
+</Layout>

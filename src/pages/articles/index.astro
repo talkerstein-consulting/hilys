@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { articles } from "../../data/articles-content";
+---
+
+<Layout
+  title="Articles"
+  description="Tips, trends, and party ideas from Hily's Sparkly Spa."
+  path="/articles"
+>
+  <main class="flex-1">
+    <section class="bg-background px-6 pt-40 pb-16 md:pt-52 md:pb-24 text-center">
+      <h1 class="mx-auto mb-4 max-w-3xl text-4xl font-medium tracking-tight md:text-6xl">
+        Articles
+      </h1>
+      <p class="text-muted-foreground mx-auto max-w-xl text-lg">
+        Tips, trends, and party ideas from Hily&apos;s Sparkly Spa.
+      </p>
+    </section>
+
+    <section class="bg-background px-6 pb-24">
+      <div class="mx-auto grid max-w-4xl grid-cols-1 gap-6">
+        {
+          articles.map((article) => (
+            <a
+              href={`/articles/${article.slug}`}
+              class="bg-muted rounded-2xl p-6 transition-colors hover:bg-muted/80 md:p-8"
+            >
+              <h2 class="mb-2 text-xl font-medium tracking-tight">
+                {article.title}
+              </h2>
+              <p class="text-muted-foreground text-sm leading-relaxed">
+                {article.teaser}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</Layout>

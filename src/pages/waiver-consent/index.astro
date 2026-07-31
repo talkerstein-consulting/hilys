@@ -1,0 +1,94 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const clauses = [
+  {
+    title: "Assumption of Risk",
+    body: "Activities and facilities at Hily's Sparkly Spa carry some inherent risk, including the possibility of injury or property damage. By visiting, you and your child voluntarily accept those risks.",
+  },
+  {
+    title: "Food & Beverages",
+    body: "Any food or drinks brought in by a party host (including third-party catering) are consumed at the host's own risk. Hily's Sparkly Spa does not provide or handle outside catering and is not responsible for it.",
+  },
+  {
+    title: "Supervision of Children",
+    body: "Parents and guardians remain responsible for supervising their own child(ren) throughout the visit and for ensuring they follow staff instructions and safety guidelines.",
+  },
+  {
+    title: "Photography & Social Media",
+    body: "By visiting, you consent to photos or videos taken during your visit being used by Hily's Sparkly Spa for promotional and marketing purposes.",
+  },
+  {
+    title: "Email Communications",
+    body: "Hily's Sparkly Spa may use the email address you provide to send promotions and updates. You can opt out of these communications at any time.",
+  },
+  {
+    title: "Release of Liability",
+    body: "In exchange for being allowed to participate, you release Hily's Sparkly Spa, its owners, employees, and representatives from liability for loss, damage, or injury arising from your visit, except where caused by gross negligence.",
+  },
+];
+---
+
+<Layout
+  title="Waiver & Consent"
+  description="Hily's Sparkly Spa liability waiver and consent agreement."
+  path="/waiver-consent"
+>
+  <main class="flex-1">
+    <section class="bg-background px-6 pt-40 pb-16 md:pt-52 md:pb-16 text-center">
+      <h1 class="mx-auto mb-4 max-w-3xl text-4xl font-medium tracking-tight md:text-6xl">
+        Waiver &amp; Consent
+      </h1>
+      <p class="text-muted-foreground mx-auto max-w-xl text-lg">
+        Please review the terms below. A signed waiver is required for every
+        guest visiting Hily&apos;s Sparkly Spa, located at 207 Edgeley Blvd #5,
+        Concord, ON L4K 4B5.
+      </p>
+    </section>
+
+    <section class="bg-background px-6 pb-24">
+      <div class="mx-auto max-w-3xl">
+        <div class="bg-muted mb-8 rounded-2xl p-6 md:p-8">
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            This page summarizes our waiver terms for your reference. To sign
+            the official waiver ahead of your visit, please contact us
+            directly and we&apos;ll send you the signup form.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          {
+            clauses.map((clause, index) => (
+              <div>
+                <h3 class="mb-2 text-lg font-medium tracking-tight">
+                  {index + 1}. {clause.title}
+                </h3>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                  {clause.body}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        <a
+          href="mailto:info@hilysparklyspa.com"
+          class="group mt-12 inline-flex items-center gap-3 rounded-md bg-[#A30F52] py-3 pl-5 pr-2 text-base font-medium uppercase tracking-wide text-white transition-all duration-300 hover:rounded-[50px]"
+        >
+          <span>Request Waiver Form</span>
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#A30F52] transition-transform duration-300 group-hover:scale-110">
+            <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4">
+              <path
+                d="M7.5 4.5L13 10l-5.5 5.5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ArticleLayout from "../../components/ArticleLayout";
+import { articles } from "../../data/articles-content";
+
+export function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+---
+
+<Layout
+  title={article.title}
+  description={article.intro}
+  path={`/articles/${article.slug}`}
+>
+  <ArticleLayout
+    title={article.title}
+    intro={article.intro}
+    sections={article.sections}
+  />
+</Layout>

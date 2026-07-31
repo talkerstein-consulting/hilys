@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const sections = [
+  {
+    title: "Information We Collect",
+    body: "When you book a party, sign up for a spa day, or contact us, we collect the details you provide — such as your name, email, phone number, and any notes about allergies or dietary needs.",
+  },
+  {
+    title: "How We Use Your Information",
+    body: "We use your information to schedule and run your booking, respond to your inquiries, and — if you've opted in — send occasional promotions or updates about Hily's Sparkly Spa.",
+  },
+  {
+    title: "Photos & Media",
+    body: "With your consent (collected via our waiver form), we may use photos or videos taken during your visit for marketing on our website or social media.",
+  },
+  {
+    title: "Sharing Your Information",
+    body: "We don't sell your personal information. We only share it with trusted service providers where necessary to run our business, such as scheduling or payment tools.",
+  },
+  {
+    title: "Your Choices",
+    body: "You can ask us to update or remove your information, or unsubscribe from promotional emails, at any time by contacting us.",
+  },
+];
+---
+
+<Layout
+  title="Privacy Policy"
+  description="Hily's Sparkly Spa privacy policy."
+  path="/privacy-policy"
+>
+  <main class="flex-1">
+    <section class="bg-background px-6 pt-40 pb-16 md:pt-52 md:pb-16 text-center">
+      <h1 class="mx-auto mb-4 max-w-3xl text-4xl font-medium tracking-tight md:text-6xl">
+        Privacy Policy
+      </h1>
+      <p class="text-muted-foreground mx-auto max-w-xl text-lg">
+        How Hily&apos;s Sparkly Spa collects, uses, and protects your
+        information.
+      </p>
+    </section>
+
+    <section class="bg-background px-6 pb-24">
+      <div class="mx-auto max-w-3xl space-y-8">
+        {
+          sections.map((section) => (
+            <div>
+              <h3 class="mb-2 text-lg font-medium tracking-tight">
+                {section.title}
+              </h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">
+                {section.body}
+              </p>
+            </div>
+          ))
+        }
+        <p class="text-muted-foreground text-sm leading-relaxed">
+          Questions about this policy? Contact us at{" "}
+          <a
+            href="mailto:info@hilysparklyspa.com"
+            class="underline underline-offset-4 hover:text-foreground"
+          >
+            info@hilysparklyspa.com
+          </a>.
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>

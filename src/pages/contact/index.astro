@@ -1,0 +1,94 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Contact"
+  description="Get in touch with Hily's Sparkly Spa in Vaughan, ON."
+  path="/contact"
+>
+  <main class="flex-1">
+    <section class="bg-background px-6 pt-40 pb-16 md:pt-52 md:pb-24 text-center">
+      <h1 class="mx-auto mb-4 max-w-3xl text-4xl font-medium tracking-tight md:text-6xl">
+        Contact
+      </h1>
+      <p class="text-muted-foreground mx-auto max-w-xl text-lg">Get In Touch</p>
+    </section>
+
+    <section class="bg-background px-6 pb-24">
+      <div class="mx-auto grid max-w-5xl grid-cols-1 gap-12 md:grid-cols-2">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-1">
+          <div class="bg-muted rounded-2xl p-6">
+            <h2 class="text-muted-foreground mb-2 text-sm font-semibold uppercase tracking-wider">
+              Phone
+            </h2>
+            <a href="tel:6473354055" class="text-xl font-medium hover:text-[#A30F52]">
+              (647) 335-4055
+            </a>
+          </div>
+          <div class="bg-muted rounded-2xl p-6">
+            <h2 class="text-muted-foreground mb-2 text-sm font-semibold uppercase tracking-wider">
+              Email
+            </h2>
+            <a href="mailto:info@hilysparklyspa.com" class="text-xl font-medium hover:text-[#A30F52]">
+              info@hilysparklyspa.com
+            </a>
+          </div>
+          <div class="bg-muted rounded-2xl p-6 sm:col-span-2 md:col-span-1">
+            <h2 class="text-muted-foreground mb-2 text-sm font-semibold uppercase tracking-wider">
+              Address
+            </h2>
+            <p class="text-xl font-medium">
+              207 Edgeley Blvd #5, Concord, ON L4K 4B5, Canada
+            </p>
+          </div>
+        </div>
+
+        <form class="bg-muted flex flex-col gap-4 rounded-2xl p-6 md:p-8">
+          <h2 class="mb-2 text-lg font-medium tracking-tight">Send A Message</h2>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            class="border-border bg-background rounded-md border px-4 py-3 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A30F52]"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="border-border bg-background rounded-md border px-4 py-3 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A30F52]"
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone"
+            class="border-border bg-background rounded-md border px-4 py-3 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A30F52]"
+          />
+          <textarea
+            name="message"
+            placeholder="Message"
+            rows={4}
+            class="border-border bg-background rounded-md border px-4 py-3 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A30F52]"
+          ></textarea>
+          <button
+            type="submit"
+            class="group mt-2 inline-flex items-center justify-center gap-3 rounded-md bg-[#A30F52] py-3 pl-5 pr-2 text-base font-medium uppercase tracking-wide text-white transition-all duration-300 hover:rounded-[50px]"
+          >
+            <span>Submit</span>
+            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#A30F52] transition-transform duration-300 group-hover:scale-110">
+              <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4">
+                <path
+                  d="M7.5 4.5L13 10l-5.5 5.5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const galleryImages = [
+  "/img/spa/gallary-1.jpg.jpg",
+  "/img/spa/gallary-2.jpg.jpg",
+  "/img/spa/gallary-3.jpg.jpg",
+  "/img/spa/gallary-4.jpg.jpg",
+  "/img/spa/gallary-5.jpg.jpg",
+  "/img/spa/gallary-6.jpg.jpg",
+  "/img/spa/bday-service.webp",
+  "/img/spa/day-spa-service.webp",
+  "/img/spa/mini-duo-package.webp",
+  "/img/spa/step1.jpg",
+  "/img/spa/step2.jpg",
+  "/img/spa/step3_jpg.webp",
+];
+---
+
+<Layout
+  title="Gallery"
+  description="See our Vaughan spa parties in action at Hily's Sparkly Spa — glowing smiles, glamorous makeovers & messy slime fun."
+  path="/gallery"
+>
+  <main class="flex-1">
+    <section class="bg-background px-6 pt-40 pb-16 md:pt-52 md:pb-24 text-center">
+      <h1 class="mx-auto mb-4 max-w-3xl text-4xl font-medium tracking-tight md:text-6xl">
+        Gallery
+      </h1>
+      <p class="text-muted-foreground mx-auto mb-8 max-w-xl text-lg">
+        See our Vaughan spa parties in action at Hily&apos;s Sparkly Spa —
+        glowing smiles, glamorous makeovers &amp; messy slime fun.
+      </p>
+      <a
+        href="/booking"
+        class="group inline-flex items-center justify-center gap-3 rounded-md bg-[#A30F52] py-3 pl-5 pr-2 text-base font-medium uppercase tracking-wide text-white transition-all duration-300 hover:rounded-[50px]"
+      >
+        <span>Book Your Sparkle Party</span>
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#A30F52] transition-transform duration-300 group-hover:scale-110">
+          <svg viewBox="0 0 20 20" fill="none" class="h-4 w-4">
+            <path
+              d="M7.5 4.5L13 10l-5.5 5.5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </span>
+      </a>
+    </section>
+
+    <section class="bg-background px-6 pb-24">
+      <div class="mx-auto grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
+        {
+          galleryImages.map((src) => (
+            <div class="relative aspect-square overflow-hidden rounded-2xl">
+              <img
+                src={src}
+                alt="Hily's Sparkly Spa party moment"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</Layout>

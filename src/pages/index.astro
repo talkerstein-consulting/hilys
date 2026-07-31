@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero";
+import AboutValues from "../components/AboutValues";
+import SignatureExperiences from "../components/SignatureExperiences";
+import HowItWorks from "../components/HowItWorks";
+import Features from "../components/Features";
+import Testimonials from "../components/Testimonials";
+import GalleryCTA from "../components/GalleryCTA";
+---
+
+<Layout
+  title={undefined}
+  description="At Hily's Sparkly Spa, we turn ordinary days into glittering adventures for ages 3 – 13. Vaughan's premier children's spa and birthday party venue."
+  path="/"
+>
+  <main id="main-content" class="flex-1">
+    <Hero client:load />
+    <AboutValues client:visible />
+    <SignatureExperiences client:visible />
+    <HowItWorks client:visible />
+    <Features client:visible />
+    <Testimonials client:visible />
+    <GalleryCTA client:visible />
+  </main>
+</Layout>
